@@ -7,39 +7,23 @@ class Slider extends React.Component {
         this.state = { value: '' };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
-
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Name:
-                        <input
-                            type="text"
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-
                 <div className="my-5">
                     <label htmlFor="customRange1">Per hour amount :: </label>
                     <input
                         type="range"
                         className="custom-range"
                         id="customRange1"
+                        min="1"
+                        max="300"
                         onChange={this.handleChange}
                     />
 

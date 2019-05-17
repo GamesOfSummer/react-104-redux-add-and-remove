@@ -16,6 +16,11 @@ class RatePerDay extends React.Component {
                 <label>
                     Per Month at 160 hours: $ {this.props.value * 160}
                 </label>
+                <br />
+                <label>
+                    Per Month at 160 hours @ 20% removed: ${' '}
+                    {this.props.value * 160 - this.props.value * 160 * 0.2}
+                </label>
             </div>
         );
     }
